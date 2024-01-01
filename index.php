@@ -12,28 +12,43 @@ if($_GET){
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title></title>
+    <title>CopyToClipboard CopiaECola</title>
 
 </head>
 <body>
+    <div style="text-align: center;">
     <?php 
       
       if($get['cp'] || $get['clipboard']){
-        echo 'Your text copy to clipboard is :'.($get['cp']?$get['cp']:$get['clipboard']);
+        echo '<h1>Your text copy to clipboard is :'.($get['cp']?$get['cp']:$get['clipboard']).'</h1>';
       }else{
-        echo 'Paramenter type GET cp not found Example: '.$_SERVER['https'].'://'.$_SERVER['SERVER_NAME'].'/?cp=YOURTEXTHERE';
+        echo '<h1>Example: '.($_SERVER['https'] == 'on'? 'https': 'http').'://'.$_SERVER['SERVER_NAME'].'/?cp=YOURTEXTHERE</h1>';
       }
       
     ?>
     
-    <hr/>
-    <div>
-        <input type="text" value="<?php echo ($get['cp']?$get['cp']:$get['clipboard']); ?>" id="copyMe">
-        <button onclick="copyMyText()">Copy To Clipboard</button>
-    </div>
+    <br/>
+    <br/>
+    <br/>
+    <br/>
+    <br/>
+    <br/>
+    <br/>
+    
 
-    <hr/>
-    <button onclick="copyToClipboard('<?php echo ($get['cp']?$get['cp']:$get['clipboard']); ?>');">Copy to Clip To Clipboard</button>
+        <input type="text" value="<?php echo ($get['cp']?$get['cp']:$get['clipboard']); ?>" id="copyMe" disabled>
+        <button onclick="copyMyText()"><i>&#xf24d;</i> | Copy To Clipboard (Copiar)</button>
+  
+
+    <br/>
+    <br/>
+    <br/>
+    <br/>
+    <br/>
+    <br/>
+    <h2><?php echo ($get['cp']?$get['cp']:$get['clipboard']); ?></h2>
+    <button onclick="copyToClipboard('<?php echo ($get['cp']?$get['cp']:$get['clipboard']); ?>');"><i>&#xf24d;</i>Copy to Clip To Clipboard (Copiar)</button>
+    </div>
     <script type="application/javascript">
             
             function copyMyText() {
